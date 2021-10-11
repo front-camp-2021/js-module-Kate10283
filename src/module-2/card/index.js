@@ -65,8 +65,13 @@ export default class Card {
   }
 
   render() {
-    this.element = document.createElement("div");
-    this.element.innerHTML = this.getTemplate();
+    const wrapper = document.createElement('div');
+
+    wrapper.innerHTML = this.getTemplate();
+
+    this.element = wrapper.firstElementChild;
+    // this.element = document.createElement("div");
+    // this.element.innerHTML = this.getTemplate();
   }
 
   remove() {
