@@ -12,6 +12,19 @@
     width: 100%;
 }
 
+.slider-block {
+    display: flex;
+    align-items: center;
+}
+
+.slider-block .range {
+    padding: 0 10px;
+}
+
+.range {
+    display: flex;
+}
+
 .container{
     position: relative;
     width: 100%;

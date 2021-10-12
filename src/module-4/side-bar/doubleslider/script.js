@@ -5,6 +5,7 @@ let displayValTwo;
 let minGap;
 let sliderTrack;
 let sliderMaxValue;
+let sliderMinValue;
 
 function startRemove() {
     if (document.getElementById('clearFilters')) {
@@ -20,6 +21,7 @@ function startRemove() {
     minGap = 0;
     sliderTrack = document.querySelector(".slider-track");
     sliderMaxValue = document.getElementById("slider-1").max;
+    sliderMinValue = document.getElementById("slider-1").min;
     slideOne();
     slideTwo();
 }
@@ -41,7 +43,7 @@ function slideTwo() {
     fillColor();
 }
 function fillColor() {
-    percent1 = (sliderOne.value / sliderMaxValue) * 100;
-    percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+    percent1 = ((sliderOne.value - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100;
+    percent2 = ((sliderTwo.value - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100;
     sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , rgba(111, 100, 248, 1) ${percent1}% , rgba(111, 100, 248, 1) ${percent2}%, #dadae5 ${percent2}%)`;
 }
